@@ -1,3 +1,4 @@
+// AutoTriage VSCode Extension
 const vscode = require('vscode');
 const { execSync } = require('child_process');
 
