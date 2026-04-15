@@ -10,14 +10,48 @@
   "categories": ["Other"],
   "activationEvents": [
     "onStartupFinished",
-    "onCommand:autotriage.flushSession"
+    "onCommand:autotriage.flushSession",
+    "onCommand:autotriage.showLastIssueDraft",
+    "onCommand:autotriage.exportLastIssueDraft",
+    "onCommand:autotriage.openSidebarPreview",
+    "onView:autotriageSidebar"
   ],
   "main": "./extension.js",
+
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "autotriage",
+          "title": "AutoTriage",
+          "icon": "media/autotriage.svg"
+        }
+      ]
+    },
+    "views": {
+      "autotriage": [
+        {
+          "id": "autotriageSidebar",
+          "name": "Issue Dashboard"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "autotriage.flushSession",
         "title": "AutoTriage: Flush Session"
+      },
+      {
+        "command": "autotriage.showLastIssueDraft",
+        "title": "AutoTriage: Show Last Issue Draft"
+      },
+      {
+        "command": "autotriage.exportLastIssueDraft",
+        "title": "AutoTriage: Export Last Issue Draft"
+      },
+      {
+        "command": "autotriage.openSidebarPreview",
+        "title": "AutoTriage: Open Sidebar Preview"
       }
     ]
   }
